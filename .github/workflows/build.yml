@@ -23,5 +23,7 @@ jobs:
           pip install flet requests yfinance pandas numpy
 
       - name: Build APK with Flet
+        env:
+          FLET_FORCE_MITMS: "false"
         run: |
-          flet build apk --verbose
+          yes y | flet build apk --verbose
