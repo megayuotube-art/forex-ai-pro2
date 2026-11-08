@@ -72,4 +72,4 @@ def main(page: ft.Page):
 
 # Dasturni ishga tushirish qismi (AttributeError chiqmasligi uchun eng muhim joyi)
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(main)
