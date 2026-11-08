@@ -1,0 +1,17 @@
+workflows:
+  flet-android-build:
+    name: Build Flet Android APK
+    max_build_duration: 60
+    environment:
+      python: 3.10
+      flutter: stable
+    scripts:
+      - name: Install dependencies
+        script: |
+          python -m pip install --upgrade pip
+          pip install flet requests yfinance pandas numpy
+      - name: Build APK with Flet
+        script: |
+          flet build apk --verbose
+    artifacts:
+      - build/flutter/build/app/outputs/flutter-apk/app-release.apk
